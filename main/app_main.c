@@ -56,7 +56,7 @@ static esp_err_t mqtt_event_handler_cb(esp_mqtt_event_handle_t event)
             	printf("\n value: %d", value);
             	char value_str[4];
             	sprintf(value_str,"%d",value);
-            	msg_id = esp_mqtt_client_publish(client, "nuGWuCsEaAPeld7", value_str, 0, 1, 0);
+            	msg_id = esp_mqtt_client_publish(client, "broker_main_topic", value_str, 0, 1, 0);
             	ESP_LOGI(TAG, "sent publish successful, msg_id=%d", msg_id);
             	printf("Mensaje enviado ");
             	vTaskDelay(1000/portTICK_PERIOD_MS);
@@ -102,8 +102,8 @@ static void mqtt_app_start(void)
 {
     esp_mqtt_client_config_t mqtt_cfg = {
         .uri = CONFIG_BROKER_URL,
-		.username = "XGyZVv9x7a3KoT4",
-		.password = "hZ34TIXTuwlbUx0",
+		.username = "broker_user",
+		.password = "broker_pass",
     };
 #if CONFIG_BROKER_URL_FROM_STDIN
     char line[128];

@@ -123,7 +123,7 @@ CONFIG_PARTITION_TABLE_MD5=y
 #
 # Example Configuration
 #
-CONFIG_BROKER_URL="tcp://ioticos.org"
+CONFIG_BROKER_URL="mqtt://ioticos.org"
 # end of Example Configuration
 
 #
